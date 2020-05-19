@@ -20,6 +20,10 @@ export class ScheduleComponent {
     procedureData: Procedure[];
     scheduleData: Schedule[];
     procedure_scheduleData:Procedure_Schedule[];
+    /*
+    *  om du skallanvända denna som dataSource i dvx-schedule-komponenten
+    *  så måste det var en DataSource se längre ner hur du gör detta 
+    */
     scheduledProcedureData: ScheduledProcedure[];
     statusData: ProcedureStatus[];
     staffData: Staff[];
@@ -122,6 +126,9 @@ export class ScheduleComponent {
 
     RestOfShit(){
         this.statusData = this.service.getStatus();
+        /*
+        * gör om till this.scheduledProcedureData = new DataSource({ store: this.getScheduledProcedures()});
+        */
         this.scheduledProcedureData = this.getScheduledProcedures();
         this.scheduledStaff = this.GetScheduledStaff();
         locale(navigator.language);
