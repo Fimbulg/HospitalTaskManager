@@ -1,6 +1,7 @@
 <div class="scheduler" *ngIf="isLoaded">
     <dx-scheduler 
         [views]='["Dagtid"]' 
+                  <!-- bindningen av dataSource sker till ett objekt som inte är ett DataSource-objekt -->
         [dataSource]="scheduledProcedureData" 
         [showAllDayPanel]="false"
         [groups]="['staffId']" 
